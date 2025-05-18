@@ -1,0 +1,305 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Pacifico', cursive;
+  background-image: url('assets/66.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  height: 100vh;
+  padding-top: 50px;
+}
+
+.app-container {
+  width: 400px;
+  background: linear-gradient(to bottom right, rgba(30, 30, 70, 0.7), rgba(20, 20, 50, 0.6));
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border-radius: 20px;
+  padding: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.4), inset 0 0 10px rgba(255, 255, 255, 0.05);
+}
+
+.header {
+  background-color: #181848;
+  padding: 20px;
+  border-radius: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 30px;
+  font-family: 'Pacifico', cursive;
+  font-weight: 600;
+}
+
+.header p {
+  margin: 5px 0 10px;
+  color: #bbb;
+}
+
+.progress-bar {
+  width: 150px;
+  height: 8px;
+  background-color: #333;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  width: 66%;
+  height: 100%;
+  background-color: #00e0ff;
+  transition: width 0.3s;
+}
+
+.progress-circle {
+  width: 50px;
+  height: 50px;
+  background-color: #6a5acd;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  color: white;
+}
+
+.input-section {
+  display: flex;
+  margin-top: 20px;
+  border-radius: 10px;
+  transition: box-shadow 0.3s ease;
+}
+
+.input-section:focus-within {
+  box-shadow: 0 0 8px #00e0ff, 0 0 15px #00e0ff88;
+}
+
+#task-input {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 8px 0 0 8px;
+  background-color: #22224d;
+  color: white;
+  outline: none;
+}
+
+.category-dropdown {
+  background-color: #6a5acd;
+  color: white;
+  border: none;
+  padding: 10px 12px;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  outline: none;
+  transition: all 0.2s ease;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+/* Fix: style placeholder option */
+.category-dropdown option:disabled {
+  color: #c0dfff;
+}
+
+/* For placeholder effect when no value selected */
+.category-dropdown:invalid {
+  color: #c0dfff;
+}
+
+.category-dropdown:focus {
+  box-shadow: none;
+}
+
+.category-dropdown option {
+  background-color: #6a5acd;
+  color: white;
+}
+
+#add-task {
+  width: 40px;
+  background-color: #6a5acd;
+  border: none;
+  color: white;
+  font-size: 24px;
+  border-radius: 0 8px 8px 0;
+  cursor: pointer;
+}
+
+#add-task:hover {
+  background-color: #7a6add;
+  transition: background-color 0.3s ease;
+}
+
+#task-input:focus {
+  outline: none;
+}
+
+ul#task-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+}
+
+.task-item {
+  background-color: #1e1e3c;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.task-item:hover {
+  background-color: #2f2f6e;
+}
+
+.task-item input[type="checkbox"] {
+  margin-right: 10px;
+  transform: scale(1.2);
+}
+
+.task-text {
+  flex: 1;
+  color: white;
+}
+
+.task-text.completed {
+  text-decoration: line-through;
+  color: #00e0ff;
+  text-shadow: 0 0 5px #00e0ff;
+}
+
+.task-actions button {
+  background: none;
+  border: none;
+  margin-left: 10px;
+  cursor: pointer;
+  font-size: 30px;
+}
+
+.task-actions .edit {
+  color: #cda8ff;
+}
+
+.task-actions .delete {
+  color: #ff6b6b;
+}
+
+.task-actions button:hover {
+  transform: scale(1.2);
+  opacity: 0.8;
+  transition: all 0.2s ease;
+}
+
+.header h1,
+.task-text,
+.progress-circle {
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.tag-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-top: 6px;
+}
+
+.tag {
+  background-color: #cda8ff;
+  color: #1e1e3c;
+  padding: 4px 10px;
+  font-size: 12px;
+  border-radius: 20px;
+  font-weight: bold;
+  box-shadow: 0 0 5px rgba(205, 168, 255, 0.6);
+  transition: transform 0.2s ease;
+}
+
+.tag:hover {
+  transform: scale(1.1);
+}
+.task-item {
+  cursor: grab;
+}
+
+.task-item.dragging {
+  opacity: 0.5;
+}
+.drag-handle {
+  font-size: 18px;
+  margin-right: 10px;
+  cursor: grab;
+  user-select: none;
+}
+
+.task-item.dragging {
+  opacity: 0.5;
+}
+/* Drag handle styling */
+.drag-handle {
+  font-size: 20px;
+  cursor: grab;
+  margin-right: 10px;
+  transition: transform 0.2s ease;
+}
+
+.drag-handle:hover {
+  transform: scale(1.5);
+}
+
+/* Dragging style */
+.task-item.dragging {
+  opacity: 0.5;
+  transform: rotate(2deg);
+}
+
+/* Animate task movement */
+.task-item {
+  transition: transform 0.2s ease, opacity 0.2s ease, background-color 0.3s;
+}
+/* Lifted popup look on drag */
+.task-item.lifted {
+  transform: scale(1.03);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+  z-index: 10;
+  transition: transform 0.15s ease, box-shadow 0.2s ease;
+}
+
+/* Drag handle hover */
+.drag-handle:hover {
+  transform: scale(1.6);
+  color: #00e0ff;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+/* Animate moving effect */
+.task-item {
+  transition: transform 0.2s ease, opacity 0.2s ease, background-color 0.3s ease;
+  cursor: grab;
+}
+
+.task-item.dragging {
+  opacity: 0.6;
+}
+
+/* Smooth cursor everywhere */
+body, button, input, select, .task-item {
+  cursor: default;
+}
+
+.drag-handle {
+  cursor: grab;
+}

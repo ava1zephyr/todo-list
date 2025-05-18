@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sign Up</title>
+  <link rel="stylesheet" href="auth.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body class="auth-body">
+  <div class="auth-container">
+    <h2>Sign Up</h2>
+    <form id="signupForm">
+      <div class="input-group">
+        <input type="text" id="newUsername" placeholder="Create username" required />
+        <span class="icon">👤</span>
+      </div>
+      <div class="input-group">
+        <input type="password" id="newPassword" placeholder="Create password" required />
+        <span class="icon">🔒</span>
+      </div>
+      <button type="submit" class="auth-button">Sign Up</button>
+    </form>
+    <p>Already have an account? <a href="login.html">Log in</a></p>
+  </div>
+
+  <script>
+    document.getElementById("signupForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+      const username = document.getElementById("newUsername").value;
+      const password = document.getElementById("newPassword").value;
+
+      localStorage.setItem("user", JSON.stringify({ username, password }));
+      alert("Signup successful! Go log in now.");
+      window.location.href = "login.html";
+    });
+  </script>
+</body>
+</html>

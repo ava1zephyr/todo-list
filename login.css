@@ -1,0 +1,103 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  height: 100vh;
+  background: linear-gradient(135deg, #f8d7ff, #e0c3fc, #c2f0fc);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: fadeIn 1.2s ease-in;
+}
+
+.login-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.login-card {
+  background: white;
+  padding: 40px 30px;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 320px;
+  animation: popIn 0.6s ease-in-out;
+}
+
+h2 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+  color: #6a5acd;
+}
+
+.subtitle {
+  font-size: 0.95rem;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+input {
+  width: 100%;
+  padding: 12px 14px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  background-color: #f9f9f9;
+  transition: 0.3s ease;
+}
+
+input:focus {
+  outline: none;
+  border-color: #b38bfa;
+  background-color: #fff;
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  background-color: #b38bfa;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+button:hover {
+  background-color: #a079ec;
+}
+
+.error-msg {
+  color: #e57373;
+  margin-top: 10px;
+  font-size: 0.9rem;
+}
+
+/* Animations */
+@keyframes popIn {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    background-color: #fff;
+  }
+  to {
+    background: linear-gradient(135deg, #f8d7ff, #e0c3fc, #c2f0fc);
+  }
+}

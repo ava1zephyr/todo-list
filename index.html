@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Todo App</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <script>
+    // 🔒 Redirect if user not logged in
+    const user = localStorage.getItem("user");
+    if (!user) {
+      alert("You gotta log in first, bestie 😤");
+      window.location.href = "login.html";
+    }
+  </script>
+
+  <div class="app-container">
+    <div class="header">
+      <div>
+        <h1>To-Do List</h1>
+        <p>Keep it up!</p>
+        <div class="progress-bar">
+          <div class="progress-fill" id="progress-fill"></div>
+        </div>
+      </div>
+      <div class="progress-circle" id="progress-circle">2/3</div>
+    </div>
+
+    <div class="input-section" id="input-wrapper">
+      <input type="text" id="task-input" placeholder="Write your task" />
+      <select id="tag-input" class="category-dropdown" required>
+        <option value="" disabled selected hidden>Select category</option>
+        <option value="work">Work</option>
+        <option value="personal">Personal</option>
+        <option value="chore">Chore</option>
+      </select>
+      <button id="add-task">+</button>
+    </div>
+
+    <ul id="task-list">
+      <!-- Tasks will appear here -->
+    </ul>
+
+    <!-- 🔓 Optional Logout Button -->
+    <div style="text-align:center; margin-top: 20px;">
+      <button onclick="logout()" style="padding: 8px 16px; border-radius: 8px; background-color: #f44336; color: white; border: none; cursor: pointer;">
+        Logout
+      </button>
+    </div>
+  </div>
+
+  <script>
+    function logout() {
+      localStorage.removeItem("user");
+      window.location.href = "login.html";
+    }
+  </script>
+
+  <script src="script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</body>
+</html>

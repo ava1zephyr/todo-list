@@ -1,0 +1,101 @@
+/* Background */
+.auth-body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Pacifico', cursive;
+  background-image: url('assets/6.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  height: 100vh;
+  padding-top: 50px;
+}
+
+/* Container */
+.app-container {
+  width: 400px;
+  background: rgba(255, 255, 255, 0.1); /* light overlay */
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 20px;
+  padding: 30px 25px;
+  border: 1.5px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.05);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Input styles */
+.input-group {
+  position: relative;
+  width: 100%;
+  margin-bottom: 20px;
+}
+.input-group input {
+  width: 100%;
+  padding: 12px 45px 12px 18px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 25px;
+  outline: none;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  color: white;
+  font-size: 15px;
+}
+.input-group input::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+.input-group .icon {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 18px;
+  color: white;
+  filter: drop-shadow(0 0 2px rgba(0,0,0,0.3));
+}
+
+/* Button */
+.auth-button {
+  width: 100%;
+  padding: 12px;
+  background-color: white;
+  color: #5f27cd;
+  border: none;
+  border-radius: 25px;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.auth-button:hover {
+  background-color: #f0f0f0;
+}
+
+/* Text styles */
+.auth-container p {
+  margin-top: 15px;
+  font-size: 15px;
+}
+.auth-container a {
+  color: #fff;
+  text-decoration: underline;
+  font-weight: 600;
+}
+
+.extra-options {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  margin-bottom: 20px;
+  width: 100%;
+}
+.extra-options a {
+  color: #ddd;
+  text-decoration: none;
+}
